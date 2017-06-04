@@ -307,7 +307,7 @@
 		\alinea Il existe plusieurs mesures de distances :
 		$$ d_1(p, q) = |x_p - x_q| + |y_p - y_q| $$
 		$$ d_2(p, q) = \sqrt{(x_p - x_q)^2 + (y_p - y_q)^2} $$
-		$$ d_{inf}(p, q) = \max{(|x_p - x_q| + |y_p - y_q|)} $$
+		$$ d_{inf}(p, q) = \max{(|x_p - x_q|, |y_p - y_q|)} $$
 		$$ \forall p, q : d_{inf}(p, q) <= d_2(p, q) <= d_1(p, q) $$
 		%
 	%
@@ -441,7 +441,8 @@
 		\alinea Ces filtres utilisent une forme géométrique (structuring element, ou S) pour s'appliquer sur l'image.
 		%
 		\subsubsection{\'Erosion}
-			\alinea Le principe de ce filtre est de \hl{supprimer (remplacer par des 0) les éléments plus petits} que le structuring element.
+			\alinea Le principe de ce filtre est de \hl{supprimer (remplacer par des 0) les éléments plus petits} que le 
+				structuring element.
 				Lorsque S est placé  entre des 0 et des 1, on efface les 1 en les remplaçant par des 0. Les objets plus petits que 
 				2 fois la taille de S seront supprimés. Faire une érosion avec S de taille N est similaire à faire N érosions
 				avec S de taille 1. \hl{(Dilate le noir -- background)}
@@ -452,7 +453,7 @@
 			%
 			\begin{minipage}{0.33\textwidth}
 				\alinea Si on l'applique au niveau de gris plutôt que sur une image binaire, les éléments prennent la \hl{valeur minimale}
-					dans le champ de S. (Dans l'exemple, S=B et à comme taille deux bâtonnets du graphe).
+					dans le champ de S. (Dans l'exemple, S=B et à comme taille trois bâtonnets du graphe).
 			\end{minipage} \hfill
 			\begin{minipage}{0.66\textwidth}
 				\begin{center}
@@ -472,7 +473,7 @@
 			%
 			\begin{minipage}{0.33\textwidth}
 				\alinea Si on l'applique au niveau de gris plutôt que sur une image binaire, les éléments prennent la \hl{valeur maximale}
-					dans le champ de S. (Dans l'exemple, S=B et à comme taille deux bâtonnets du graphe).
+					dans le champ de S. (Dans l'exemple, S=B et à comme taille trois bâtonnets du graphe).
 			\end{minipage} \hfill
 			\begin{minipage}{0.66\textwidth}
 				\begin{center}
